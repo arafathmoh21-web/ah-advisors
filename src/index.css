@@ -9,8 +9,8 @@ html {
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #03122f;
-  color: #f8fafc;
+  background: #041633;
+  color: #ffffff;
   line-height: 1.6;
 }
 
@@ -19,12 +19,16 @@ a {
   color: inherit;
 }
 
+button {
+  font: inherit;
+}
+
 .site {
   min-height: 100vh;
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -33,13 +37,13 @@ a {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #020617;
-  padding: 15px 0;
+  background: rgba(2, 10, 26, 0.95);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
 }
 
 .nav {
-  min-height: 78px;
+  min-height: 82px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -49,28 +53,28 @@ a {
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
 .brandLogo {
   width: 70px;
   height: 70px;
   object-fit: contain;
-  background: white;
-  border-radius: 12px;
+  background: #ffffff;
+  border-radius: 14px;
   padding: 6px;
 }
 
 .logo {
-  font-size: 32px;
   margin: 0;
-  color: #f8fafc;
+  font-size: 34px;
+  color: #ffffff;
 }
 
 .tagline {
   margin: 6px 0 0;
-  color: #94a3b8;
-  font-size: 14px;
+  color: #cbd5e1;
+  font-size: 15px;
 }
 
 .navLinks {
@@ -79,24 +83,24 @@ a {
 }
 
 .navLinks a {
-  text-decoration: none;
-  color: #cbd5f5;
-  font-weight: 500;
+  color: #e2e8f0;
+  font-weight: 600;
+  transition: 0.2s ease;
 }
 
 .navLinks a:hover {
-  color: white;
+  color: #ffffff;
 }
 
 .hero {
-  padding: 80px 0 60px;
+  padding: 86px 0 60px;
   text-align: center;
 }
 
 .heroGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 32px;
+  gap: 30px;
 }
 
 .heroContent {
@@ -106,23 +110,23 @@ a {
 
 .badge {
   display: inline-block;
-  padding: 8px 14px;
+  padding: 9px 15px;
   border-radius: 999px;
-  background: rgba(245, 158, 11, 0.12);
-  color: #f8fafc;
-  border: 1px solid rgba(245, 158, 11, 0.45);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #ffffff;
   font-size: 14px;
 }
 
 .hero h2 {
   font-size: 54px;
   line-height: 1.08;
-  margin: 24px 0 16px;
+  margin: 22px 0 16px;
   color: #ffffff;
 }
 
 .heroText {
-  max-width: 900px;
+  max-width: 920px;
   margin: 0 auto;
   font-size: 18px;
   color: #dbe4f0;
@@ -139,8 +143,7 @@ a {
 .btn {
   padding: 12px 20px;
   border-radius: 10px;
-  font-weight: 600;
-  text-decoration: none;
+  font-weight: 700;
   transition: 0.2s ease;
 }
 
@@ -149,112 +152,143 @@ a {
 }
 
 .btnPrimary {
-  background: #f59e0b;
-  color: black;
+  background: #ffffff;
+  color: #041633;
 }
 
 .btnSecondary {
-  border: 1px solid #f59e0b;
-  color: white;
+  border: 1px solid #ffffff;
+  color: #ffffff;
   background: transparent;
 }
 
 .btnWhatsapp {
   background: #22c55e;
-  color: black;
+  color: #041633;
+}
+
+.btnFacebook {
+  background: #1877f2;
+  color: #ffffff;
 }
 
 .heroCard {
-  background: #0b1b3a;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 16px;
+  background: #0b2147;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
   padding: 28px;
-  max-width: 520px;
+  max-width: 540px;
   margin: 0 auto;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
 }
 
 .heroCard h3 {
   margin-top: 0;
   margin-bottom: 10px;
-  font-size: 22px;
+  font-size: 24px;
 }
 
 .heroCard p {
   margin-top: 0;
-  color: #d0d9e7;
+  color: #dbe4f0;
 }
 
 .contactMini {
-  margin-top: 15px;
+  margin-top: 18px;
+  display: grid;
+  gap: 12px;
 }
 
 .contactMini div {
-  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px 14px;
+  border-radius: 10px;
 }
 
 .contactMini strong {
-  margin-right: 6px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contactMini span {
+  color: #dbe4f0;
+  word-break: break-word;
 }
 
 .section {
-  padding: 60px 0;
+  padding: 65px 0;
   text-align: left;
 }
 
 .sectionAlt {
-  background: rgba(255, 255, 255, 0.01);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .sectionLabel {
   margin-bottom: 10px;
-  color: #94a3b8;
+  color: #cbd5e1;
   font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .sectionLabel.light {
-  color: #fbbf24;
+  color: #ffffff;
 }
 
 .sectionTitle {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   font-size: 34px;
   color: #ffffff;
+}
+
+.sectionSubtext {
+  margin-top: 0;
+  margin-bottom: 24px;
+  color: #cbd5e1;
 }
 
 .servicesGrid {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 20px;
 }
 
 .serviceCard {
-  background: #111827;
-  padding: 25px;
-  border-radius: 12px;
+  background: #0b2147;
+  padding: 24px;
+  border-radius: 14px;
   text-align: center;
   transition: all 0.3s ease;
   border: 1px solid transparent;
+  cursor: pointer;
+  color: #ffffff;
 }
 
 .serviceCard:hover {
-  transform: translateY(-6px);
-  border: 1px solid #f59e0b;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
+  border: 1px solid #ffffff;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+}
+
+.serviceCard.active {
+  border: 1px solid #ffffff;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
 }
 
 .serviceIcon {
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
   margin: 0 auto 14px;
   border-radius: 12px;
-  background: #0b1b3a;
+  background: #ffffff;
+  color: #041633;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  color: #ffffff;
 }
 
 .serviceCard h3 {
@@ -263,8 +297,23 @@ a {
   color: #ffffff;
 }
 
+.serviceHint {
+  margin: 10px 0 0;
+  color: #cbd5e1;
+  font-size: 13px;
+}
+
+.serviceDescription {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
 .aboutGrid {
-  max-width: 800px;
+  max-width: 850px;
 }
 
 .bodyText {
@@ -273,10 +322,10 @@ a {
 }
 
 .aboutCard {
-  background: #0b1b3a;
-  border-radius: 12px;
+  background: #0b2147;
+  border-radius: 14px;
   padding: 24px;
-  margin-top: 24px;
+  margin-top: 26px;
 }
 
 .aboutCard h3 {
@@ -297,9 +346,10 @@ a {
 }
 
 .contactBox {
-  background: #111827;
-  padding: 30px;
-  border-radius: 12px;
+  background: #0b2147;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
 }
 
 .contactBox h2 {
@@ -316,19 +366,21 @@ a {
 }
 
 .contactLinks a {
-  background: #0b1b3a;
+  background: #ffffff;
+  color: #041633;
   padding: 12px 16px;
   border-radius: 10px;
+  font-weight: 700;
 }
 
 .footer {
   margin-top: 40px;
-  border-top: 1px solid #1f2937;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footerInner {
   padding: 20px 0;
-  color: #94a3b8;
+  color: #cbd5e1;
   display: flex;
   justify-content: space-between;
   gap: 16px;
@@ -341,7 +393,7 @@ a {
   bottom: 20px;
   right: 20px;
   background: #22c55e;
-  color: black;
+  color: #041633;
   padding: 12px 18px;
   border-radius: 50px;
   font-weight: bold;
@@ -352,6 +404,7 @@ a {
   .nav {
     flex-direction: column;
     align-items: flex-start;
+    padding: 14px 0;
   }
 
   .navLinks {
@@ -370,5 +423,9 @@ a {
 
   .footerInner {
     flex-direction: column;
+  }
+
+  .brand {
+    align-items: flex-start;
   }
 }

@@ -1,28 +1,72 @@
+import { useState } from "react";
 import "./index.css";
 
-const services = [
-  "Tax Return Filing",
-  "TIN Registration",
-  "TIN Duplicate / Recovery",
-  "IRD Profile Updates",
-  "Tax Computations",
-  "Tax Advisory",
-  "Notice Handling Support",
-  "Tax Updates",
-  "Personal Tax Consultation",
+type Service = {
+  title: string;
+  short: string;
+};
+
+const services: Service[] = [
+  {
+    title: "Tax Return Filing",
+    short:
+      "Accurate preparation and filing of tax returns for individuals and businesses with proper compliance support.",
+  },
+  {
+    title: "TIN Registration",
+    short:
+      "Guidance and end-to-end support for new Taxpayer Identification Number registrations.",
+  },
+  {
+    title: "TIN Duplicate / Recovery",
+    short:
+      "Assistance in recovering or reissuing TIN details if your records or documents are missing.",
+  },
+  {
+    title: "IRD Profile Updates",
+    short:
+      "Updating taxpayer information and maintaining correct records with the Inland Revenue Department.",
+  },
+  {
+    title: "Tax Computations",
+    short:
+      "Preparation of clear and reliable tax computations to support filings and compliance requirements.",
+  },
+  {
+    title: "Tax Advisory",
+    short:
+      "Practical advice on tax obligations, compliance matters, and filing-related concerns.",
+  },
+  {
+    title: "Notice Handling Support",
+    short:
+      "Professional support in responding to notices, requests, and follow-ups from the tax authorities.",
+  },
+  {
+    title: "Tax Updates",
+    short:
+      "Timely updates on tax changes, deadlines, and matters relevant to individuals and businesses.",
+  },
+  {
+    title: "Personal Tax Consultation",
+    short:
+      "One-to-one support on personal tax matters, responsibilities, planning points, and practical next steps.",
+  },
 ];
 
 export default function App() {
+  const [openCard, setOpenCard] = useState<number | null>(null);
+
+  const toggleCard = (index: number) => {
+    setOpenCard(openCard === index ? null : index);
+  };
+
   return (
     <div className="site">
       <header className="header">
         <div className="container nav">
           <div className="brand">
-            <img
-              src="/logo.png"
-              alt="AH Advisors Logo"
-              className="brandLogo"
-            />
+            <img src="/logo.png" alt="AH Advisors Logo" className="brandLogo" />
             <div>
               <h1 className="logo">AH Advisors</h1>
               <p className="tagline">Your Trusted Tax Advisor</p>
@@ -47,9 +91,10 @@ export default function App() {
             <h2>Reliable tax support for individuals and businesses.</h2>
 
             <p className="heroText">
-              AH Advisors provides practical, professional, and client-focused tax
-              services including return filing, TIN registration, tax computations,
-              profile updates, tax updates, and personal tax consultation.
+              AH Advisors provides practical, professional, and client-focused
+              tax services including return filing, TIN registration, tax
+              computations, profile updates, tax updates, and personal tax
+              consultation.
             </p>
 
             <div className="heroButtons">
@@ -63,11 +108,20 @@ export default function App() {
 
               <a
                 className="btn btnWhatsapp"
-                href="https://wa.me/94750207378"
+                href="https://wa.me/94750207378?text=Hello%20AH%20Advisors,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
                 target="_blank"
                 rel="noreferrer"
               >
                 WhatsApp
+              </a>
+
+              <a
+                className="btn btnFacebook"
+                href="https://facebook.com/https://facebook.com/profile.php?id=61588193288059"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Facebook
               </a>
             </div>
           </div>
@@ -88,6 +142,11 @@ export default function App() {
                 <strong>Email</strong>
                 <span>arafathmoh21@gmail.com</span>
               </div>
+
+              <div>
+                <strong>Facebook</strong>
+                <span>facebook.com/YOUR_PAGE_LINK</span>
+              </div>
             </div>
           </div>
         </div>
@@ -99,13 +158,28 @@ export default function App() {
           <h2 className="sectionTitle">
             Professional services tailored to your tax needs
           </h2>
+          <p className="sectionSubtext">
+            Click each category to view a short description.
+          </p>
 
           <div className="servicesGrid">
-            {services.map((service) => (
-              <div className="serviceCard" key={service}>
+            {services.map((service, index) => (
+              <button
+                key={service.title}
+                className={`serviceCard ${openCard === index ? "active" : ""}`}
+                onClick={() => toggleCard(index)}
+                type="button"
+              >
                 <div className="serviceIcon">AH</div>
-                <h3>{service}</h3>
-              </div>
+                <h3>{service.title}</h3>
+                <p className="serviceHint">
+                  {openCard === index ? "Click to close" : "Click to view details"}
+                </p>
+
+                {openCard === index && (
+                  <div className="serviceDescription">{service.short}</div>
+                )}
+              </button>
             ))}
           </div>
         </div>
@@ -161,11 +235,18 @@ export default function App() {
                 Email: arafathmoh21@gmail.com
               </a>
               <a
-                href="https://wa.me/94750207378"
+                href="https://wa.me/94750207378?text=Hello%20AH%20Advisors,%20I%20would%20like%20to%20get%20in%20touch."
                 target="_blank"
                 rel="noreferrer"
               >
                 Chat on WhatsApp
+              </a>
+              <a
+                href="https://facebook.com/https://facebook.com/profile.php?id=61588193288059"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Visit Facebook Page
               </a>
             </div>
           </div>
@@ -180,7 +261,7 @@ export default function App() {
       </footer>
 
       <a
-        href="https://wa.me/94750207378"
+        href="https://wa.me/94750207378?text=Hello%20AH%20Advisors"
         target="_blank"
         rel="noreferrer"
         className="whatsappFloat"
