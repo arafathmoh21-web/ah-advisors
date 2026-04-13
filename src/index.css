@@ -1,0 +1,374 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #03122f;
+  color: #f8fafc;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.site {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #020617;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav {
+  min-height: 78px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brandLogo {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  background: white;
+  border-radius: 12px;
+  padding: 6px;
+}
+
+.logo {
+  font-size: 32px;
+  margin: 0;
+  color: #f8fafc;
+}
+
+.tagline {
+  margin: 6px 0 0;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 30px;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #cbd5f5;
+  font-weight: 500;
+}
+
+.navLinks a:hover {
+  color: white;
+}
+
+.hero {
+  padding: 80px 0 60px;
+  text-align: center;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.heroContent {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(245, 158, 11, 0.12);
+  color: #f8fafc;
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  font-size: 14px;
+}
+
+.hero h2 {
+  font-size: 54px;
+  line-height: 1.08;
+  margin: 24px 0 16px;
+  color: #ffffff;
+}
+
+.heroText {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 18px;
+  color: #dbe4f0;
+}
+
+.heroButtons {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btnPrimary {
+  background: #f59e0b;
+  color: black;
+}
+
+.btnSecondary {
+  border: 1px solid #f59e0b;
+  color: white;
+  background: transparent;
+}
+
+.btnWhatsapp {
+  background: #22c55e;
+  color: black;
+}
+
+.heroCard {
+  background: #0b1b3a;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 28px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.heroCard h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.heroCard p {
+  margin-top: 0;
+  color: #d0d9e7;
+}
+
+.contactMini {
+  margin-top: 15px;
+}
+
+.contactMini div {
+  margin-bottom: 10px;
+}
+
+.contactMini strong {
+  margin-right: 6px;
+}
+
+.section {
+  padding: 60px 0;
+  text-align: left;
+}
+
+.sectionAlt {
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.sectionLabel {
+  margin-bottom: 10px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.sectionLabel.light {
+  color: #fbbf24;
+}
+
+.sectionTitle {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 34px;
+  color: #ffffff;
+}
+
+.servicesGrid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.serviceCard {
+  background: #111827;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.serviceCard:hover {
+  transform: translateY(-6px);
+  border: 1px solid #f59e0b;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.serviceIcon {
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 14px;
+  border-radius: 12px;
+  background: #0b1b3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.serviceCard h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.aboutGrid {
+  max-width: 800px;
+}
+
+.bodyText {
+  color: #dbe4f0;
+  margin-bottom: 14px;
+}
+
+.aboutCard {
+  background: #0b1b3a;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.aboutCard h3 {
+  margin-top: 0;
+}
+
+.aboutCard ul {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.aboutCard li {
+  margin-bottom: 8px;
+}
+
+.contactSection {
+  text-align: center;
+}
+
+.contactBox {
+  background: #111827;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.contactBox h2 {
+  margin-top: 0;
+  color: #ffffff;
+}
+
+.contactLinks {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.contactLinks a {
+  background: #0b1b3a;
+  padding: 12px 16px;
+  border-radius: 10px;
+}
+
+.footer {
+  margin-top: 40px;
+  border-top: 1px solid #1f2937;
+}
+
+.footerInner {
+  padding: 20px 0;
+  color: #94a3b8;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+.whatsappFloat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #22c55e;
+  color: black;
+  padding: 12px 18px;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 900px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navLinks {
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .hero h2 {
+    font-size: 38px;
+  }
+
+  .contactLinks {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .footerInner {
+    flex-direction: column;
+  }
+}

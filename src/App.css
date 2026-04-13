@@ -1,0 +1,338 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.site {
+  min-height: 100vh;
+}
+
+.container {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.nav {
+  min-height: 78px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  margin: 0;
+  font-size: 28px;
+  color: #0f172a;
+}
+
+.tagline {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 24px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.hero {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #fff7ed;
+  color: #9a6700;
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid #fed7aa;
+}
+
+.hero h2 {
+  font-size: 52px;
+  line-height: 1.05;
+  margin: 20px 0 16px;
+  letter-spacing: -1px;
+}
+
+.heroText {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #475569;
+  max-width: 720px;
+}
+
+.heroButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.btn {
+  padding: 14px 20px;
+  border-radius: 14px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.btnPrimary {
+  background: #0f172a;
+  color: white;
+}
+
+.btnSecondary {
+  background: white;
+  border: 1px solid #cbd5e1;
+}
+
+.btnWhatsapp {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.heroCard {
+  background: #0f172a;
+  color: white;
+  padding: 32px;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.18);
+}
+
+.heroCard h3 {
+  margin-top: 0;
+  font-size: 28px;
+}
+
+.heroCard p {
+  color: #cbd5e1;
+  line-height: 1.8;
+}
+
+.contactMini {
+  margin-top: 24px;
+  display: grid;
+  gap: 16px;
+}
+
+.contactMini div {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 14px 16px;
+}
+
+.contactMini strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.contactMini span {
+  color: #e2e8f0;
+  word-break: break-word;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.sectionAlt {
+  background: white;
+}
+
+.sectionLabel {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.sectionLabel.light {
+  color: #fbbf24;
+}
+
+.sectionTitle {
+  margin: 0 0 24px;
+  font-size: 40px;
+  line-height: 1.15;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.serviceCard {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+.serviceIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: #0f172a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.serviceCard h3 {
+  margin: 0;
+  font-size: 19px;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.bodyText {
+  color: #475569;
+  line-height: 1.9;
+  font-size: 17px;
+}
+
+.aboutCard {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  padding: 28px;
+}
+
+.aboutCard h3 {
+  margin-top: 0;
+}
+
+.aboutCard ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #475569;
+  line-height: 2;
+}
+
+.contactSection {
+  display: grid;
+}
+
+.contactBox {
+  background: #0f172a;
+  color: white;
+  padding: 36px;
+  border-radius: 28px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.18);
+}
+
+.contactBox h2 {
+  margin-top: 0;
+  font-size: 38px;
+}
+
+.contactBox p {
+  color: #cbd5e1;
+  line-height: 1.8;
+}
+
+.contactLinks {
+  display: grid;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.contactLinks a {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 14px 16px;
+  border-radius: 16px;
+}
+
+.footer {
+  background: white;
+  border-top: 1px solid #e2e8f0;
+}
+
+.footerInner {
+  min-height: 74px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .heroGrid,
+  .servicesGrid,
+  .aboutGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h2 {
+    font-size: 38px;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 0;
+  }
+
+  .navLinks {
+    flex-wrap: wrap;
+  }
+
+  .footerInner {
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px 0;
+    text-align: center;
+  }
+}
