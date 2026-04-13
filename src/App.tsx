@@ -54,8 +54,11 @@ const services: Service[] = [
   },
 ];
 
+const facebookLink =
+  "https://facebook.com/profile.php?id=61588193288059";
+
 export default function App() {
-  const [openCard, setOpenCard] = useState<number | null>(null);
+  const [openCard, setOpenCard] = useState<number | null>(0);
 
   const toggleCard = (index: number) => {
     setOpenCard(openCard === index ? null : index);
@@ -75,14 +78,14 @@ export default function App() {
 
           <nav className="navLinks">
             <a href="#services">Services</a>
-            <a href="#about">About</a>
+            <a href="#pricing">Pricing</a>
             <a href="#contact">Contact</a>
           </nav>
         </div>
       </header>
 
       <section className="hero">
-        <div className="container heroGrid">
+        <div className="container heroGrid compactGrid">
           <div className="heroContent">
             <span className="badge">
               Professional Tax Filing & Advisory Services
@@ -91,19 +94,18 @@ export default function App() {
             <h2>Reliable tax support for individuals and businesses.</h2>
 
             <p className="heroText">
-              AH Advisors provides practical, professional, and client-focused
-              tax services including return filing, TIN registration, tax
-              computations, profile updates, tax updates, and personal tax
-              consultation.
+              AH Advisors provides practical, professional, and client-focused tax
+              services including return filing, TIN registration, tax computations,
+              profile updates, tax updates, and personal tax consultation.
             </p>
 
             <div className="heroButtons">
               <a className="btn btnPrimary" href="#contact">
-                Get in Touch
+                Contact Now
               </a>
 
               <a className="btn btnSecondary" href="#services">
-                View Services
+                Our Services
               </a>
 
               <a
@@ -117,7 +119,7 @@ export default function App() {
 
               <a
                 className="btn btnFacebook"
-                href="https://facebook.com/https://facebook.com/profile.php?id=61588193288059"
+                href={facebookLink}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -127,9 +129,10 @@ export default function App() {
           </div>
 
           <div className="heroCard">
-            <h3>AH Advisors</h3>
+            <h3>Quick Contact</h3>
             <p>
-              Professional tax services with clarity, trust, and responsiveness.
+              Get in touch for tax filing, registration, computations, updates,
+              and consultation support.
             </p>
 
             <div className="contactMini">
@@ -145,7 +148,7 @@ export default function App() {
 
               <div>
                 <strong>Facebook</strong>
-                <span>facebook.com/YOUR_PAGE_LINK</span>
+                <span>AH Advisors Page</span>
               </div>
             </div>
           </div>
@@ -155,11 +158,9 @@ export default function App() {
       <section id="services" className="section">
         <div className="container">
           <p className="sectionLabel">Services</p>
-          <h2 className="sectionTitle">
-            Professional services tailored to your tax needs
-          </h2>
+          <h2 className="sectionTitle">Our Professional Services</h2>
           <p className="sectionSubtext">
-            Click each category to view a short description.
+            Click a service card to view a short explanation.
           </p>
 
           <div className="servicesGrid">
@@ -185,25 +186,22 @@ export default function App() {
         </div>
       </section>
 
-      <section id="about" className="section sectionAlt">
-        <div className="container aboutGrid">
-          <div>
-            <p className="sectionLabel">About</p>
-            <h2 className="sectionTitle">
-              A professional presence built on trust and clarity
-            </h2>
-
+      <section id="pricing" className="section sectionAlt">
+        <div className="container pricingWrap">
+          <div className="pricingCard">
+            <p className="sectionLabel">Pricing</p>
+            <h2 className="sectionTitle">Most Reliable Pricing</h2>
             <p className="bodyText">
-              AH Advisors is positioned as a dependable tax service provider
-              focused on practical support, timely filing, and professional
-              client communication.
+              AH Advisors aims to provide reliable, fair, and practical pricing
+              based on the nature of the service required. Clients receive
+              professional support with a focus on value, clarity, and trust.
             </p>
-
-            <p className="bodyText">
-              Whether you need help with tax returns, registrations, profile
-              updates, computations, or consultation, AH Advisors delivers a
-              reliable and approachable service experience.
-            </p>
+            <ul className="pricingList">
+              <li>Reasonable pricing structure</li>
+              <li>Professional and reliable service delivery</li>
+              <li>Clear communication before engagement</li>
+              <li>Suitable support for individuals and businesses</li>
+            </ul>
           </div>
 
           <div className="aboutCard">
@@ -222,11 +220,11 @@ export default function App() {
         <div className="container contactSection">
           <div className="contactBox">
             <p className="sectionLabel light">Contact</p>
-            <h2>Let’s discuss your tax requirements</h2>
+            <h2>All Contact Details in One Place</h2>
 
             <p>
-              Reach out for reliable assistance with tax return filing, TIN
-              registration, tax computations, updates, and consultation.
+              Reach out through phone, email, WhatsApp, or Facebook for reliable
+              assistance with your tax-related requirements.
             </p>
 
             <div className="contactLinks">
@@ -241,11 +239,7 @@ export default function App() {
               >
                 Chat on WhatsApp
               </a>
-              <a
-                href="https://facebook.com/https://facebook.com/profile.php?id=61588193288059"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href={facebookLink} target="_blank" rel="noreferrer">
                 Visit Facebook Page
               </a>
             </div>

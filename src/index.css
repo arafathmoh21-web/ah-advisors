@@ -9,7 +9,7 @@ html {
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #041633;
+  background: #071a3a;
   color: #ffffff;
   line-height: 1.6;
 }
@@ -37,13 +37,13 @@ button {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(2, 10, 26, 0.95);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(4, 12, 28, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
 }
 
 .nav {
-  min-height: 82px;
+  min-height: 78px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -57,8 +57,8 @@ button {
 }
 
 .brandLogo {
-  width: 70px;
-  height: 70px;
+  width: 68px;
+  height: 68px;
   object-fit: contain;
   background: #ffffff;
   border-radius: 14px;
@@ -67,19 +67,19 @@ button {
 
 .logo {
   margin: 0;
-  font-size: 34px;
+  font-size: 33px;
   color: #ffffff;
 }
 
 .tagline {
-  margin: 6px 0 0;
-  color: #cbd5e1;
+  margin: 5px 0 0;
+  color: #dbe4f0;
   font-size: 15px;
 }
 
 .navLinks {
   display: flex;
-  gap: 30px;
+  gap: 26px;
 }
 
 .navLinks a {
@@ -93,18 +93,22 @@ button {
 }
 
 .hero {
-  padding: 86px 0 60px;
+  padding: 60px 0 40px;
   text-align: center;
 }
 
 .heroGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 30px;
+  gap: 24px;
+}
+
+.compactGrid {
+  gap: 20px;
 }
 
 .heroContent {
-  max-width: 900px;
+  max-width: 920px;
   margin: 0 auto;
 }
 
@@ -119,9 +123,9 @@ button {
 }
 
 .hero h2 {
-  font-size: 54px;
+  font-size: 50px;
   line-height: 1.08;
-  margin: 22px 0 16px;
+  margin: 18px 0 14px;
   color: #ffffff;
 }
 
@@ -133,27 +137,27 @@ button {
 }
 
 .heroButtons {
-  margin-top: 28px;
+  margin-top: 24px;
   display: flex;
   justify-content: center;
-  gap: 14px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 .btn {
-  padding: 12px 20px;
+  padding: 12px 18px;
   border-radius: 10px;
   font-weight: 700;
   transition: 0.2s ease;
 }
 
 .btn:hover {
-  transform: scale(1.05);
+  transform: translateY(-2px);
 }
 
 .btnPrimary {
   background: #ffffff;
-  color: #041633;
+  color: #071a3a;
 }
 
 .btnSecondary {
@@ -164,7 +168,7 @@ button {
 
 .btnWhatsapp {
   background: #22c55e;
-  color: #041633;
+  color: #071a3a;
 }
 
 .btnFacebook {
@@ -173,13 +177,13 @@ button {
 }
 
 .heroCard {
-  background: #0b2147;
+  background: #0c234d;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
-  padding: 28px;
+  padding: 24px;
   max-width: 540px;
   margin: 0 auto;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
 }
 
 .heroCard h3 {
@@ -194,9 +198,9 @@ button {
 }
 
 .contactMini {
-  margin-top: 18px;
+  margin-top: 16px;
   display: grid;
-  gap: 12px;
+  gap: 10px;
 }
 
 .contactMini div {
@@ -216,7 +220,7 @@ button {
 }
 
 .section {
-  padding: 65px 0;
+  padding: 48px 0;
   text-align: left;
 }
 
@@ -226,7 +230,7 @@ button {
 
 .sectionLabel {
   margin-bottom: 10px;
-  color: #cbd5e1;
+  color: #dbe4f0;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -238,27 +242,27 @@ button {
 
 .sectionTitle {
   margin-top: 0;
-  margin-bottom: 12px;
-  font-size: 34px;
+  margin-bottom: 10px;
+  font-size: 32px;
   color: #ffffff;
 }
 
 .sectionSubtext {
   margin-top: 0;
-  margin-bottom: 24px;
-  color: #cbd5e1;
+  margin-bottom: 20px;
+  color: #dbe4f0;
 }
 
 .servicesGrid {
-  margin-top: 20px;
+  margin-top: 16px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
 }
 
 .serviceCard {
-  background: #0b2147;
-  padding: 24px;
+  background: #0c234d;
+  padding: 22px;
   border-radius: 14px;
   text-align: center;
   transition: all 0.3s ease;
@@ -268,23 +272,23 @@ button {
 }
 
 .serviceCard:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   border: 1px solid #ffffff;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 .serviceCard.active {
   border: 1px solid #ffffff;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 .serviceIcon {
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   margin: 0 auto 14px;
   border-radius: 12px;
   background: #ffffff;
-  color: #041633;
+  color: #071a3a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -299,7 +303,7 @@ button {
 
 .serviceHint {
   margin: 10px 0 0;
-  color: #cbd5e1;
+  color: #dbe4f0;
   font-size: 13px;
 }
 
@@ -312,6 +316,27 @@ button {
   line-height: 1.7;
 }
 
+.pricingWrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.pricingCard {
+  background: #0c234d;
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.pricingList {
+  margin: 14px 0 0;
+  padding-left: 20px;
+}
+
+.pricingList li {
+  margin-bottom: 8px;
+}
+
 .aboutGrid {
   max-width: 850px;
 }
@@ -322,10 +347,9 @@ button {
 }
 
 .aboutCard {
-  background: #0b2147;
+  background: #0c234d;
   border-radius: 14px;
   padding: 24px;
-  margin-top: 26px;
 }
 
 .aboutCard h3 {
@@ -346,10 +370,10 @@ button {
 }
 
 .contactBox {
-  background: #0b2147;
-  padding: 32px;
+  background: #0c234d;
+  padding: 30px;
   border-radius: 16px;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
 }
 
 .contactBox h2 {
@@ -358,29 +382,28 @@ button {
 }
 
 .contactLinks {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
   margin-top: 18px;
 }
 
 .contactLinks a {
   background: #ffffff;
-  color: #041633;
+  color: #071a3a;
   padding: 12px 16px;
   border-radius: 10px;
   font-weight: 700;
 }
 
 .footer {
-  margin-top: 40px;
+  margin-top: 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footerInner {
-  padding: 20px 0;
-  color: #cbd5e1;
+  padding: 18px 0;
+  color: #dbe4f0;
   display: flex;
   justify-content: space-between;
   gap: 16px;
@@ -393,11 +416,11 @@ button {
   bottom: 20px;
   right: 20px;
   background: #22c55e;
-  color: #041633;
+  color: #071a3a;
   padding: 12px 18px;
   border-radius: 50px;
   font-weight: bold;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
 }
 
 @media (max-width: 900px) {
@@ -413,12 +436,11 @@ button {
   }
 
   .hero h2 {
-    font-size: 38px;
+    font-size: 36px;
   }
 
-  .contactLinks {
-    flex-direction: column;
-    align-items: stretch;
+  .pricingWrap {
+    grid-template-columns: 1fr;
   }
 
   .footerInner {
