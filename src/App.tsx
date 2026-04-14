@@ -9,6 +9,9 @@ import {
   UserRound,
   Newspaper,
   Landmark,
+  ShieldCheck,
+  MessagesSquare,
+  Clock3,
 } from "lucide-react";
 import "./index.css";
 
@@ -75,14 +78,42 @@ const services: Service[] = [
   },
 ];
 
+const faqs = [
+  {
+    question: "Do you support both individuals and businesses?",
+    answer:
+      "Yes. AH Advisors provides support for both individual and business-related tax matters depending on the service required.",
+  },
+  {
+    question: "Can I contact you through WhatsApp directly?",
+    answer:
+      "Yes. You can contact AH Advisors directly through WhatsApp for initial enquiries and service discussions.",
+  },
+  {
+    question: "Do you assist with TIN registration and profile updates?",
+    answer:
+      "Yes. TIN registration, duplicate recovery, and IRD profile updates are included among the core services provided.",
+  },
+  {
+    question: "How is pricing decided?",
+    answer:
+      "Pricing depends on the type of service, scope of work, and complexity involved. The focus is on fair, reliable, and practical pricing.",
+  },
+];
+
 const facebookLink =
   "https://facebook.com/profile.php?id=61588193288059";
 
 export default function App() {
   const [openCard, setOpenCard] = useState<number | null>(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const toggleCard = (index: number) => {
     setOpenCard(openCard === index ? null : index);
+  };
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
   };
 
   return (
@@ -100,6 +131,7 @@ export default function App() {
           <nav className="navLinks">
             <a href="#services">Services</a>
             <a href="#pricing">Pricing</a>
+            <a href="#about">About</a>
             <a href="#contact">Contact</a>
           </nav>
         </div>
@@ -116,9 +148,9 @@ export default function App() {
 
             <p className="heroText">
               AH Advisors provides practical, professional, and client-focused
-              tax services including return filing, TIN registration, tax
-              computations, profile updates, tax updates, and personal tax
-              consultation.
+              tax support for individuals and businesses seeking reliable
+              guidance on return filing, TIN registration, tax computations,
+              profile updates, tax notices, and general advisory matters.
             </p>
 
             <div className="heroButtons">
@@ -177,6 +209,45 @@ export default function App() {
         </div>
       </section>
 
+      <section className="section sectionLight">
+        <div className="container">
+          <p className="sectionLabel">Why Choose Us</p>
+          <h2 className="sectionTitle">Professional support you can rely on</h2>
+
+          <div className="featureGrid">
+            <div className="featureCard">
+              <div className="featureIcon">
+                <ShieldCheck size={22} />
+              </div>
+              <h3>Reliable Service</h3>
+              <p>
+                Practical support with a focus on accuracy, trust, and professional handling.
+              </p>
+            </div>
+
+            <div className="featureCard">
+              <div className="featureIcon">
+                <MessagesSquare size={22} />
+              </div>
+              <h3>Clear Communication</h3>
+              <p>
+                Straightforward communication so clients clearly understand the service and next steps.
+              </p>
+            </div>
+
+            <div className="featureCard">
+              <div className="featureIcon">
+                <Clock3 size={22} />
+              </div>
+              <h3>Timely Support</h3>
+              <p>
+                Responsive assistance for deadlines, filings, updates, notices, and consultations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="services" className="section">
         <div className="container">
           <p className="sectionLabel">Services</p>
@@ -208,15 +279,18 @@ export default function App() {
         </div>
       </section>
 
-      <section id="pricing" className="section sectionAlt">
+      <section id="pricing" className="section sectionLight">
         <div className="container pricingWrap">
           <div className="pricingCard">
             <p className="sectionLabel">Pricing</p>
             <h2 className="sectionTitle">Most Reliable Pricing</h2>
             <p className="bodyText">
-              AH Advisors aims to provide reliable, fair, and practical pricing
-              based on the nature of the service required. Clients receive
-              professional support with a focus on value, clarity, and trust.
+              AH Advisors aims to provide fair, practical, and dependable pricing
+              based on the nature and complexity of each service requirement.
+            </p>
+            <p className="bodyText">
+              The focus is on value, clarity, and professional service delivery
+              rather than a one-size-fits-all approach.
             </p>
             <ul className="pricingList">
               <li>Reasonable pricing structure</li>
@@ -227,13 +301,90 @@ export default function App() {
           </div>
 
           <div className="aboutCard">
-            <h3>Why choose AH Advisors</h3>
+            <h3>Why clients choose AH Advisors</h3>
             <ul>
-              <li>Clear service categories</li>
+              <li>Clear service categories and practical support</li>
               <li>Responsive and professional communication</li>
-              <li>Reliable support for filing and compliance</li>
+              <li>Reliable support for filing and compliance matters</li>
               <li>Ongoing tax updates for better planning</li>
+              <li>Approachable guidance for individuals and businesses</li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="section">
+        <div className="container">
+          <p className="sectionLabel">About</p>
+          <h2 className="sectionTitle">
+            A professional presence built on trust and clarity
+          </h2>
+
+          <p className="bodyText">
+            AH Advisors is positioned as a dependable tax service provider focused
+            on practical support, timely filing, and professional client communication.
+          </p>
+
+          <p className="bodyText">
+            Whether you need help with tax returns, registrations, profile updates,
+            tax computations, notices, or consultation, AH Advisors aims to deliver
+            a service experience built on reliability, responsiveness, and trust.
+          </p>
+        </div>
+      </section>
+
+      <section className="section sectionLight">
+        <div className="container">
+          <p className="sectionLabel">Testimonials</p>
+          <h2 className="sectionTitle">What clients value most</h2>
+
+          <div className="testimonialGrid">
+            <div className="testimonialCard">
+              <p>
+                “Professional, reliable, and very clear in communication. The support
+                provided made the entire process much easier to understand.”
+              </p>
+              <strong>Client Feedback</strong>
+            </div>
+
+            <div className="testimonialCard">
+              <p>
+                “Quick responses, practical guidance, and a dependable service
+                experience from start to finish.”
+              </p>
+              <strong>Individual Client</strong>
+            </div>
+
+            <div className="testimonialCard">
+              <p>
+                “A trustworthy approach to tax support with good communication and
+                helpful updates throughout the process.”
+              </p>
+              <strong>Business Client</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <p className="sectionLabel">FAQ</p>
+          <h2 className="sectionTitle">Frequently asked questions</h2>
+
+          <div className="faqList">
+            {faqs.map((faq, index) => (
+              <button
+                key={faq.question}
+                className={`faqItem ${openFaq === index ? "open" : ""}`}
+                onClick={() => toggleFaq(index)}
+                type="button"
+              >
+                <div className="faqQuestion">{faq.question}</div>
+                {openFaq === index && (
+                  <div className="faqAnswer">{faq.answer}</div>
+                )}
+              </button>
+            ))}
           </div>
         </div>
       </section>
@@ -246,7 +397,7 @@ export default function App() {
 
             <p>
               Reach out through phone, email, WhatsApp, or Facebook for reliable
-              assistance with your tax-related requirements.
+              support with your tax-related requirements.
             </p>
 
             <div className="contactLinks">
