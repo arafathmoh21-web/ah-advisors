@@ -1,9 +1,21 @@
 import { useState } from "react";
+import {
+  Calculator,
+  FileCheck,
+  FileSearch,
+  BellRing,
+  BadgeCheck,
+  RefreshCw,
+  UserRound,
+  Newspaper,
+  Landmark,
+} from "lucide-react";
 import "./index.css";
 
 type Service = {
   title: string;
   short: string;
+  icon: JSX.Element;
 };
 
 const services: Service[] = [
@@ -11,46 +23,55 @@ const services: Service[] = [
     title: "Tax Return Filing",
     short:
       "Accurate preparation and filing of tax returns for individuals and businesses with proper compliance support.",
+    icon: <FileCheck size={22} />,
   },
   {
     title: "TIN Registration",
     short:
       "Guidance and end-to-end support for new Taxpayer Identification Number registrations.",
+    icon: <BadgeCheck size={22} />,
   },
   {
     title: "TIN Duplicate / Recovery",
     short:
       "Assistance in recovering or reissuing TIN details if your records or documents are missing.",
+    icon: <RefreshCw size={22} />,
   },
   {
     title: "IRD Profile Updates",
     short:
       "Updating taxpayer information and maintaining correct records with the Inland Revenue Department.",
+    icon: <Landmark size={22} />,
   },
   {
     title: "Tax Computations",
     short:
       "Preparation of clear and reliable tax computations to support filings and compliance requirements.",
+    icon: <Calculator size={22} />,
   },
   {
     title: "Tax Advisory",
     short:
       "Practical advice on tax obligations, compliance matters, and filing-related concerns.",
+    icon: <FileSearch size={22} />,
   },
   {
     title: "Notice Handling Support",
     short:
       "Professional support in responding to notices, requests, and follow-ups from the tax authorities.",
+    icon: <BellRing size={22} />,
   },
   {
     title: "Tax Updates",
     short:
       "Timely updates on tax changes, deadlines, and matters relevant to individuals and businesses.",
+    icon: <Newspaper size={22} />,
   },
   {
     title: "Personal Tax Consultation",
     short:
       "One-to-one support on personal tax matters, responsibilities, planning points, and practical next steps.",
+    icon: <UserRound size={22} />,
   },
 ];
 
@@ -85,7 +106,7 @@ export default function App() {
       </header>
 
       <section className="hero">
-        <div className="container heroGrid compactGrid">
+        <div className="container heroGrid">
           <div className="heroContent">
             <span className="badge">
               Professional Tax Filing & Advisory Services
@@ -94,9 +115,10 @@ export default function App() {
             <h2>Reliable tax support for individuals and businesses.</h2>
 
             <p className="heroText">
-              AH Advisors provides practical, professional, and client-focused tax
-              services including return filing, TIN registration, tax computations,
-              profile updates, tax updates, and personal tax consultation.
+              AH Advisors provides practical, professional, and client-focused
+              tax services including return filing, TIN registration, tax
+              computations, profile updates, tax updates, and personal tax
+              consultation.
             </p>
 
             <div className="heroButtons">
@@ -171,7 +193,7 @@ export default function App() {
                 onClick={() => toggleCard(index)}
                 type="button"
               >
-                <div className="serviceIcon">AH</div>
+                <div className="serviceIcon">{service.icon}</div>
                 <h3>{service.title}</h3>
                 <p className="serviceHint">
                   {openCard === index ? "Click to close" : "Click to view details"}
