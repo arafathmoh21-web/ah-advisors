@@ -15,7 +15,7 @@ import "./index.css";
 type Service = {
   title: string;
   short: string;
-  icon: JSX.Element;
+  icon: React.ReactNode;
 };
 
 const services: Service[] = [
