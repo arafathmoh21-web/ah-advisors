@@ -145,13 +145,25 @@ export default function App() {
                 >
                   WhatsApp
                 </a>
+
+                <a
+                  className="btn btnFacebook"
+                  href={facebookLink}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Facebook
+                </a>
               </div>
             </div>
 
             <aside className="heroPanel">
               <div className="heroPanelHeader">
                 <h3>Quick Contact</h3>
-                <p>Professional support for filings, registrations, and advisory matters.</p>
+                <p>
+                  Professional support for filings, registrations, tax
+                  computations, updates, and advisory matters.
+                </p>
               </div>
 
               <div className="heroInfoGrid">
@@ -186,22 +198,22 @@ export default function App() {
               {services.map((service, index) => (
                 <button
                   key={service.title}
-                  className={`serviceCard ${openCard === index ? "active" : ""}`}
+                  className={`serviceFlipCard ${openCard === index ? "flipped" : ""}`}
                   onClick={() => toggleCard(index)}
                   type="button"
                 >
-                  <div className="serviceTop">
-                    <div className="serviceIcon">{service.icon}</div>
-                    <h3>{service.title}</h3>
+                  <div className="serviceFlipInner">
+                    <div className="serviceFlipFront">
+                      <div className="serviceIcon">{service.icon}</div>
+                      <h3>{service.title}</h3>
+                      <p className="serviceHint">Tap to view details</p>
+                    </div>
+
+                    <div className="serviceFlipBack">
+                      <h3>{service.title}</h3>
+                      <p>{service.short}</p>
+                    </div>
                   </div>
-
-                  <p className="serviceHint">
-                    {openCard === index ? "Close details" : "View details"}
-                  </p>
-
-                  {openCard === index && (
-                    <div className="serviceDescription">{service.short}</div>
-                  )}
                 </button>
               ))}
             </div>

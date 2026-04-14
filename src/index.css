@@ -193,6 +193,11 @@ textarea {
   color: var(--white);
 }
 
+.btnFacebook {
+  background: var(--blue);
+  color: var(--white);
+}
+
 .heroPanel {
   background: var(--navy);
   color: var(--white);
@@ -273,32 +278,78 @@ textarea {
   gap: 16px;
 }
 
-.serviceCard {
+.serviceFlipCard {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  perspective: 1000px;
+  min-height: 220px;
+}
+
+.serviceFlipInner {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+}
+
+.serviceFlipCard.flipped .serviceFlipInner {
+  transform: rotateY(180deg);
+}
+
+.serviceFlipFront,
+.serviceFlipBack {
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 22px;
+}
+
+.serviceFlipFront {
   background: var(--white);
   border: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 20px;
   text-align: left;
-  cursor: pointer;
-  transition: 0.2s ease;
-  box-shadow: var(--shadow);
+  align-items: flex-start;
 }
 
-.serviceCard:hover,
-.serviceCard.active {
-  border-color: #9fbce4;
+.serviceFlipFront h3 {
+  margin: 12px 0 0;
+  font-size: 16px;
+  color: #0f172a;
 }
 
-.serviceTop {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.serviceFlipBack {
+  background: var(--navy);
+  color: var(--white);
+  border: 1px solid var(--navy);
+  transform: rotateY(180deg);
+  text-align: left;
+  align-items: flex-start;
+}
+
+.serviceFlipBack h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.serviceFlipBack p {
+  margin: 0;
+  color: #dbe4f0;
+  font-size: 14px;
+  line-height: 1.7;
 }
 
 .serviceIcon {
   width: 42px;
   height: 42px;
-  flex: 0 0 42px;
   border-radius: 3px;
   background: var(--navy);
   color: var(--white);
@@ -307,26 +358,11 @@ textarea {
   justify-content: center;
 }
 
-.serviceCard h3 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 700;
-  color: #0f172a;
-}
-
 .serviceHint {
-  margin: 14px 0 0;
+  margin-top: 12px;
   font-size: 12px;
   color: #64748b;
   font-weight: 600;
-}
-
-.serviceDescription {
-  margin-top: 14px;
-  padding-top: 14px;
-  border-top: 1px solid #e5edf8;
-  font-size: 14px;
-  color: var(--muted);
 }
 
 .whyGrid {
@@ -341,6 +377,18 @@ textarea {
   border-radius: 4px;
   padding: 22px;
   box-shadow: var(--shadow);
+}
+
+.whyIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 3px;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
 }
 
 .whyCard h3 {
@@ -521,10 +569,6 @@ textarea {
 
   .heroTitle {
     font-size: 38px;
-  }
-
-  .heroContent {
-    text-align: left;
   }
 
   .heroButtons {
