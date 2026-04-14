@@ -10,8 +10,8 @@ import {
   Newspaper,
   Landmark,
   ShieldCheck,
-  MessagesSquare,
-  Clock3,
+  BriefcaseBusiness,
+  CircleDollarSign,
 } from "lucide-react";
 import "./index.css";
 
@@ -25,79 +25,56 @@ const services: Service[] = [
   {
     title: "Tax Return Filing",
     short:
-      "Accurate preparation and filing of tax returns for individuals and businesses with proper compliance support.",
-    icon: <FileCheck size={22} />,
+      "Preparation and filing of tax returns for individuals and businesses with proper attention to accuracy, deadlines, and compliance requirements.",
+    icon: <FileCheck size={20} strokeWidth={2} />,
   },
   {
     title: "TIN Registration",
     short:
-      "Guidance and end-to-end support for new Taxpayer Identification Number registrations.",
-    icon: <BadgeCheck size={22} />,
+      "Guidance and support for obtaining a new Taxpayer Identification Number through a clear and practical process.",
+    icon: <BadgeCheck size={20} strokeWidth={2} />,
   },
   {
     title: "TIN Duplicate / Recovery",
     short:
-      "Assistance in recovering or reissuing TIN details if your records or documents are missing.",
-    icon: <RefreshCw size={22} />,
+      "Assistance in recovering, locating, or reissuing TIN-related details when records or previous information are unavailable.",
+    icon: <RefreshCw size={20} strokeWidth={2} />,
   },
   {
     title: "IRD Profile Updates",
     short:
-      "Updating taxpayer information and maintaining correct records with the Inland Revenue Department.",
-    icon: <Landmark size={22} />,
+      "Support in updating taxpayer details and maintaining proper records with the Inland Revenue Department.",
+    icon: <Landmark size={20} strokeWidth={2} />,
   },
   {
     title: "Tax Computations",
     short:
-      "Preparation of clear and reliable tax computations to support filings and compliance requirements.",
-    icon: <Calculator size={22} />,
+      "Preparation of clear and reliable tax computations to support filing, reporting, and compliance requirements.",
+    icon: <Calculator size={20} strokeWidth={2} />,
   },
   {
     title: "Tax Advisory",
     short:
-      "Practical advice on tax obligations, compliance matters, and filing-related concerns.",
-    icon: <FileSearch size={22} />,
+      "Practical tax guidance for individuals and businesses on obligations, notices, filing responsibilities, and related matters.",
+    icon: <FileSearch size={20} strokeWidth={2} />,
   },
   {
     title: "Notice Handling Support",
     short:
-      "Professional support in responding to notices, requests, and follow-ups from the tax authorities.",
-    icon: <BellRing size={22} />,
+      "Professional assistance in reviewing and responding to notices, requests, and follow-up matters received from tax authorities.",
+    icon: <BellRing size={20} strokeWidth={2} />,
   },
   {
     title: "Tax Updates",
     short:
-      "Timely updates on tax changes, deadlines, and matters relevant to individuals and businesses.",
-    icon: <Newspaper size={22} />,
+      "Relevant updates on tax changes, filing deadlines, and practical developments that may affect clients.",
+    icon: <Newspaper size={20} strokeWidth={2} />,
   },
   {
     title: "Personal Tax Consultation",
     short:
-      "One-to-one support on personal tax matters, responsibilities, planning points, and practical next steps.",
-    icon: <UserRound size={22} />,
-  },
-];
-
-const faqs = [
-  {
-    question: "Do you support both individuals and businesses?",
-    answer:
-      "Yes. AH Advisors provides support for both individual and business-related tax matters depending on the service required.",
-  },
-  {
-    question: "Can I contact you through WhatsApp directly?",
-    answer:
-      "Yes. You can contact AH Advisors directly through WhatsApp for initial enquiries and service discussions.",
-  },
-  {
-    question: "Do you assist with TIN registration and profile updates?",
-    answer:
-      "Yes. TIN registration, duplicate recovery, and IRD profile updates are included among the core services provided.",
-  },
-  {
-    question: "How is pricing decided?",
-    answer:
-      "Pricing depends on the type of service, scope of work, and complexity involved. The focus is on fair, reliable, and practical pricing.",
+      "One-to-one consultation for personal tax matters, responsibilities, planning considerations, and practical next steps.",
+    icon: <UserRound size={20} strokeWidth={2} />,
   },
 ];
 
@@ -106,329 +83,279 @@ const facebookLink =
 
 export default function App() {
   const [openCard, setOpenCard] = useState<number | null>(0);
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const toggleCard = (index: number) => {
     setOpenCard(openCard === index ? null : index);
-  };
-
-  const toggleFaq = (index: number) => {
-    setOpenFaq(openFaq === index ? null : index);
   };
 
   return (
     <div className="site">
       <header className="header">
         <div className="container nav">
-          <div className="brand">
+          <a href="#top" className="brand">
             <img src="/logo.png" alt="AH Advisors Logo" className="brandLogo" />
-            <div>
+            <div className="brandText">
               <h1 className="logo">AH Advisors</h1>
               <p className="tagline">Your Trusted Tax Advisor</p>
             </div>
-          </div>
+          </a>
 
           <nav className="navLinks">
             <a href="#services">Services</a>
+            <a href="#why">Why Us</a>
             <a href="#pricing">Pricing</a>
-            <a href="#about">About</a>
             <a href="#contact">Contact</a>
           </nav>
         </div>
       </header>
 
-      <section className="hero">
-        <div className="container heroGrid">
-          <div className="heroContent">
-            <span className="badge">
-              Professional Tax Filing & Advisory Services
-            </span>
+      <main id="top">
+        <section className="hero">
+          <div className="container heroGrid">
+            <div className="heroContent">
+              <span className="heroEyebrow">
+                Professional Tax Filing & Advisory Services
+              </span>
 
-            <h2>Reliable tax support for individuals and businesses.</h2>
+              <h2 className="heroTitle">
+                Reliable tax support for individuals and businesses.
+              </h2>
 
-            <p className="heroText">
-              AH Advisors provides practical, professional, and client-focused
-              tax support for individuals and businesses seeking reliable
-              guidance on return filing, TIN registration, tax computations,
-              profile updates, tax notices, and general advisory matters.
-            </p>
+              <p className="heroText">
+                AH Advisors provides practical, professional, and client-focused
+                tax services for individuals and businesses seeking dependable
+                support in return filing, registrations, tax computations,
+                profile updates, tax notices, and advisory matters.
+              </p>
 
-            <div className="heroButtons">
-              <a className="btn btnPrimary" href="#contact">
-                Contact Now
-              </a>
+              <div className="heroButtons">
+                <a className="btn btnPrimary" href="#contact">
+                  Contact Now
+                </a>
 
-              <a className="btn btnSecondary" href="#services">
-                Our Services
-              </a>
+                <a className="btn btnSecondary" href="#services">
+                  View Services
+                </a>
 
-              <a
-                className="btn btnWhatsapp"
-                href="https://wa.me/94750207378?text=Hello%20AH%20Advisors,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-                target="_blank"
-                rel="noreferrer"
-              >
-                WhatsApp
-              </a>
-
-              <a
-                className="btn btnFacebook"
-                href={facebookLink}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Facebook
-              </a>
-            </div>
-          </div>
-
-          <div className="heroCard">
-            <h3>Quick Contact</h3>
-            <p>
-              Get in touch for tax filing, registration, computations, updates,
-              and consultation support.
-            </p>
-
-            <div className="contactMini">
-              <div>
-                <strong>Phone</strong>
-                <span>0750207378</span>
-              </div>
-
-              <div>
-                <strong>Email</strong>
-                <span>arafathmoh21@gmail.com</span>
-              </div>
-
-              <div>
-                <strong>Facebook</strong>
-                <span>AH Advisors Page</span>
+                <a
+                  className="btn btnWhatsapp"
+                  href="https://wa.me/94750207378?text=Hello%20AH%20Advisors,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  WhatsApp
+                </a>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section className="section sectionLight">
-        <div className="container">
-          <p className="sectionLabel">Why Choose Us</p>
-          <h2 className="sectionTitle">Professional support you can rely on</h2>
-
-          <div className="featureGrid">
-            <div className="featureCard">
-              <div className="featureIcon">
-                <ShieldCheck size={22} />
+            <aside className="heroPanel">
+              <div className="heroPanelHeader">
+                <h3>Quick Contact</h3>
+                <p>Professional support for filings, registrations, and advisory matters.</p>
               </div>
-              <h3>Reliable Service</h3>
-              <p>
-                Practical support with a focus on accuracy, trust, and professional handling.
+
+              <div className="heroInfoGrid">
+                <div className="heroInfoItem">
+                  <span className="heroInfoLabel">Phone</span>
+                  <span className="heroInfoValue">0750207378</span>
+                </div>
+                <div className="heroInfoItem">
+                  <span className="heroInfoLabel">Email</span>
+                  <span className="heroInfoValue">arafathmoh21@gmail.com</span>
+                </div>
+                <div className="heroInfoItem">
+                  <span className="heroInfoLabel">Facebook</span>
+                  <span className="heroInfoValue">AH Advisors Page</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section id="services" className="section">
+          <div className="container">
+            <div className="sectionHead">
+              <span className="sectionEyebrow">Services</span>
+              <h2 className="sectionTitle">Our Professional Services</h2>
+              <p className="sectionIntro">
+                Select a service category to view a brief description.
               </p>
             </div>
 
-            <div className="featureCard">
-              <div className="featureIcon">
-                <MessagesSquare size={22} />
-              </div>
-              <h3>Clear Communication</h3>
-              <p>
-                Straightforward communication so clients clearly understand the service and next steps.
-              </p>
-            </div>
+            <div className="servicesGrid">
+              {services.map((service, index) => (
+                <button
+                  key={service.title}
+                  className={`serviceCard ${openCard === index ? "active" : ""}`}
+                  onClick={() => toggleCard(index)}
+                  type="button"
+                >
+                  <div className="serviceTop">
+                    <div className="serviceIcon">{service.icon}</div>
+                    <h3>{service.title}</h3>
+                  </div>
 
-            <div className="featureCard">
-              <div className="featureIcon">
-                <Clock3 size={22} />
-              </div>
-              <h3>Timely Support</h3>
-              <p>
-                Responsive assistance for deadlines, filings, updates, notices, and consultations.
-              </p>
+                  <p className="serviceHint">
+                    {openCard === index ? "Close details" : "View details"}
+                  </p>
+
+                  {openCard === index && (
+                    <div className="serviceDescription">{service.short}</div>
+                  )}
+                </button>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="services" className="section">
-        <div className="container">
-          <p className="sectionLabel">Services</p>
-          <h2 className="sectionTitle">Our Professional Services</h2>
-          <p className="sectionSubtext">
-            Click a service card to view a short explanation.
-          </p>
+        <section id="why" className="section sectionSoft">
+          <div className="container">
+            <div className="sectionHead">
+              <span className="sectionEyebrow">Why Choose AH Advisors</span>
+              <h2 className="sectionTitle">Professional support built on trust</h2>
+            </div>
 
-          <div className="servicesGrid">
-            {services.map((service, index) => (
-              <button
-                key={service.title}
-                className={`serviceCard ${openCard === index ? "active" : ""}`}
-                onClick={() => toggleCard(index)}
-                type="button"
-              >
-                <div className="serviceIcon">{service.icon}</div>
-                <h3>{service.title}</h3>
-                <p className="serviceHint">
-                  {openCard === index ? "Click to close" : "Click to view details"}
+            <div className="whyGrid">
+              <article className="whyCard">
+                <div className="whyIcon">
+                  <ShieldCheck size={20} strokeWidth={2} />
+                </div>
+                <h3>Reliable Service</h3>
+                <p>
+                  A practical and dependable approach to tax-related matters
+                  with attention to accuracy and professional standards.
                 </p>
+              </article>
 
-                {openCard === index && (
-                  <div className="serviceDescription">{service.short}</div>
-                )}
-              </button>
-            ))}
+              <article className="whyCard">
+                <div className="whyIcon">
+                  <BriefcaseBusiness size={20} strokeWidth={2} />
+                </div>
+                <h3>Professional Communication</h3>
+                <p>
+                  Clear and structured communication so clients understand the
+                  process, scope, and next steps confidently.
+                </p>
+              </article>
+
+              <article className="whyCard">
+                <div className="whyIcon">
+                  <CircleDollarSign size={20} strokeWidth={2} />
+                </div>
+                <h3>Practical Value</h3>
+                <p>
+                  Support designed to be useful, responsive, and aligned with
+                  the actual needs of individuals and businesses.
+                </p>
+              </article>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="pricing" className="section sectionLight">
-        <div className="container pricingWrap">
-          <div className="pricingCard">
-            <p className="sectionLabel">Pricing</p>
-            <h2 className="sectionTitle">Most Reliable Pricing</h2>
+        <section id="pricing" className="section">
+          <div className="container pricingGrid">
+            <div className="pricingMain">
+              <span className="sectionEyebrow">Pricing</span>
+              <h2 className="sectionTitle">Most Reliable Pricing</h2>
+              <p className="bodyText">
+                AH Advisors aims to provide fair, reasonable, and practical
+                pricing based on the type and complexity of the service
+                required.
+              </p>
+              <p className="bodyText">
+                The focus is on dependable service, professional delivery, and
+                clear understanding before engagement.
+              </p>
+            </div>
+
+            <div className="pricingCard">
+              <ul className="pricingList">
+                <li>Reasonable pricing structure</li>
+                <li>Professional and reliable service delivery</li>
+                <li>Clear understanding before engagement</li>
+                <li>Support suitable for individuals and businesses</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="section sectionSoft">
+          <div className="container narrow">
+            <div className="sectionHead alignLeft">
+              <span className="sectionEyebrow">About</span>
+              <h2 className="sectionTitle">
+                A professional presence with practical service focus
+              </h2>
+            </div>
+
             <p className="bodyText">
-              AH Advisors aims to provide fair, practical, and dependable pricing
-              based on the nature and complexity of each service requirement.
+              AH Advisors is positioned as a dependable tax service provider
+              focused on practical support, timely filing, and professional
+              client communication.
             </p>
+
             <p className="bodyText">
-              The focus is on value, clarity, and professional service delivery
-              rather than a one-size-fits-all approach.
+              Whether clients require support for returns, registrations,
+              profile updates, tax computations, notices, or consultations, AH
+              Advisors aims to provide a service experience built on reliability,
+              responsiveness, and trust.
             </p>
-            <ul className="pricingList">
-              <li>Reasonable pricing structure</li>
-              <li>Professional and reliable service delivery</li>
-              <li>Clear communication before engagement</li>
-              <li>Suitable support for individuals and businesses</li>
-            </ul>
           </div>
+        </section>
 
-          <div className="aboutCard">
-            <h3>Why clients choose AH Advisors</h3>
-            <ul>
-              <li>Clear service categories and practical support</li>
-              <li>Responsive and professional communication</li>
-              <li>Reliable support for filing and compliance matters</li>
-              <li>Ongoing tax updates for better planning</li>
-              <li>Approachable guidance for individuals and businesses</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+        <section id="contact" className="section contactSectionWrap">
+          <div className="container">
+            <div className="contactBox">
+              <div className="sectionHead centerLight">
+                <span className="sectionEyebrow light">Contact</span>
+                <h2 className="sectionTitle lightTitle">Send an Enquiry</h2>
+                <p className="contactIntro">
+                  Submit your details and AH Advisors will get back to you
+                  regarding your tax requirements.
+                </p>
+              </div>
 
-      <section id="about" className="section">
-        <div className="container">
-          <p className="sectionLabel">About</p>
-          <h2 className="sectionTitle">
-            A professional presence built on trust and clarity
-          </h2>
-
-          <p className="bodyText">
-            AH Advisors is positioned as a dependable tax service provider focused
-            on practical support, timely filing, and professional client communication.
-          </p>
-
-          <p className="bodyText">
-            Whether you need help with tax returns, registrations, profile updates,
-            tax computations, notices, or consultation, AH Advisors aims to deliver
-            a service experience built on reliability, responsiveness, and trust.
-          </p>
-        </div>
-      </section>
-
-      <section className="section sectionLight">
-        <div className="container">
-          <p className="sectionLabel">Testimonials</p>
-          <h2 className="sectionTitle">What clients value most</h2>
-
-          <div className="testimonialGrid">
-            <div className="testimonialCard">
-              <p>
-                “Professional, reliable, and very clear in communication. The support
-                provided made the entire process much easier to understand.”
-              </p>
-              <strong>Client Feedback</strong>
-            </div>
-
-            <div className="testimonialCard">
-              <p>
-                “Quick responses, practical guidance, and a dependable service
-                experience from start to finish.”
-              </p>
-              <strong>Individual Client</strong>
-            </div>
-
-            <div className="testimonialCard">
-              <p>
-                “A trustworthy approach to tax support with good communication and
-                helpful updates throughout the process.”
-              </p>
-              <strong>Business Client</strong>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
-          <p className="sectionLabel">FAQ</p>
-          <h2 className="sectionTitle">Frequently asked questions</h2>
-
-          <div className="faqList">
-            {faqs.map((faq, index) => (
-              <button
-                key={faq.question}
-                className={`faqItem ${openFaq === index ? "open" : ""}`}
-                onClick={() => toggleFaq(index)}
-                type="button"
+              <form
+                action="https://formsubmit.co/arafathmoh21@gmail.com"
+                method="POST"
+                className="contactForm"
               >
-                <div className="faqQuestion">{faq.question}</div>
-                {openFaq === index && (
-                  <div className="faqAnswer">{faq.answer}</div>
-                )}
-              </button>
-            ))}
+                <input type="text" name="name" placeholder="Your Name" required />
+                <input type="email" name="email" placeholder="Email Address" required />
+                <input type="text" name="phone" placeholder="Phone Number" />
+                <textarea
+                  name="message"
+                  placeholder="Your Requirement"
+                  rows={5}
+                  required
+                ></textarea>
+
+                <button type="submit" className="btn btnPrimary submitBtn">
+                  Submit Enquiry
+                </button>
+              </form>
+
+              <div className="contactLinks">
+                <a href="tel:0750207378">Call: 0750207378</a>
+                <a href="mailto:arafathmoh21@gmail.com">
+                  Email: arafathmoh21@gmail.com
+                </a>
+                <a
+                  href="https://wa.me/94750207378?text=Hello%20AH%20Advisors,%20I%20would%20like%20to%20get%20in%20touch."
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Chat on WhatsApp
+                </a>
+                <a href={facebookLink} target="_blank" rel="noreferrer">
+                  Visit Facebook Page
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
-     <section id="contact" className="section">
-  <div className="container contactSection">
-    <div className="contactBox">
-      <p className="sectionLabel light">Contact</p>
-      <h2>Send an Enquiry</h2>
-
-      <p>
-        Submit your details and AH Advisors will get back to you regarding
-        your tax requirements.
-      </p>
-
-      <form
-        action="https://formsubmit.co/arafathmoh21@gmail.com"
-        method="POST"
-        className="contactForm"
-      >
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Email Address" required />
-        <input type="text" name="phone" placeholder="Phone Number" />
-        <textarea
-          name="message"
-          placeholder="Your Requirement"
-          rows={4}
-          required
-        ></textarea>
-
-        <button type="submit" className="btn btnPrimary">
-          Submit Enquiry
-        </button>
-      </form>
-
-      <div className="contactLinks">
-        <a href="tel:0750207378">Call: 0750207378</a>
-        <a href="mailto:arafathmoh21@gmail.com">
-          Email: arafathmoh21@gmail.com
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
       <footer className="footer">
         <div className="container footerInner">
           <span>© 2026 AH Advisors. All rights reserved.</span>
