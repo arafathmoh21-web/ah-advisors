@@ -389,37 +389,46 @@ export default function App() {
         </div>
       </section>
 
-      <section id="contact" className="section">
-        <div className="container contactSection">
-          <div className="contactBox">
-            <p className="sectionLabel light">Contact</p>
-            <h2>All Contact Details in One Place</h2>
+     <section id="contact" className="section">
+  <div className="container contactSection">
+    <div className="contactBox">
+      <p className="sectionLabel light">Contact</p>
+      <h2>Send an Enquiry</h2>
 
-            <p>
-              Reach out through phone, email, WhatsApp, or Facebook for reliable
-              support with your tax-related requirements.
-            </p>
+      <p>
+        Submit your details and AH Advisors will get back to you regarding
+        your tax requirements.
+      </p>
 
-            <div className="contactLinks">
-              <a href="tel:0750207378">Call: 0750207378</a>
-              <a href="mailto:arafathmoh21@gmail.com">
-                Email: arafathmoh21@gmail.com
-              </a>
-              <a
-                href="https://wa.me/94750207378?text=Hello%20AH%20Advisors,%20I%20would%20like%20to%20get%20in%20touch."
-                target="_blank"
-                rel="noreferrer"
-              >
-                Chat on WhatsApp
-              </a>
-              <a href={facebookLink} target="_blank" rel="noreferrer">
-                Visit Facebook Page
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <form
+        action="https://formsubmit.co/arafathmoh21@gmail.com"
+        method="POST"
+        className="contactForm"
+      >
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="text" name="phone" placeholder="Phone Number" />
+        <textarea
+          name="message"
+          placeholder="Your Requirement"
+          rows={4}
+          required
+        ></textarea>
 
+        <button type="submit" className="btn btnPrimary">
+          Submit Enquiry
+        </button>
+      </form>
+
+      <div className="contactLinks">
+        <a href="tel:0750207378">Call: 0750207378</a>
+        <a href="mailto:arafathmoh21@gmail.com">
+          Email: arafathmoh21@gmail.com
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
       <footer className="footer">
         <div className="container footerInner">
           <span>© 2026 AH Advisors. All rights reserved.</span>
